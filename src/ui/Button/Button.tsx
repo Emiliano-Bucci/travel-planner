@@ -16,6 +16,7 @@ type ButtonProps = ComponentProps<'button'> &
     rightIcon?: ReactNode;
     textSize?: TextVariantProps['textSize'];
     as?: 'button' | 'div';
+    isLoading?: boolean;
   };
 
 export function Button({
@@ -26,6 +27,7 @@ export function Button({
   children,
   size = 'button-m',
   btnType,
+  isLoading,
   rounded,
   textSize = 'button-m',
   as = 'button',
@@ -52,6 +54,35 @@ export function Button({
       {leftIcon && <div className={prevIconStyles.root}>{leftIcon}</div>}
       {children}
       {rightIcon && <div className={nextIconStyles.root}>{rightIcon}</div>}
+      {isLoading && (
+        <div
+          className={cx(
+            button({ theme, size, btnType, rounded }),
+            css({
+              position: 'absolute',
+              inset: '0',
+              borderRadius: 'inherit',
+              w: '100%',
+              h: '100%',
+              pointerEvents: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }),
+          )}
+        >
+          <div
+            className={css({
+              width: '18px',
+              aspectRatio: '1',
+              borderRadius: '50%',
+              border: '3px solid lightblue',
+              borderRightColor: 'neutral-200-dark',
+              animation: 'button_loader_spinner 1s infinite linear',
+            })}
+          />
+        </div>
+      )}
     </button>
   );
 }

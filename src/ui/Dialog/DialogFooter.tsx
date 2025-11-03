@@ -10,6 +10,7 @@ type Props = {
     label: string;
     form: string;
     disabled?: boolean;
+    isLoading?: boolean;
   };
 };
 
@@ -42,6 +43,7 @@ export function DialogFooter({
         type="submit"
         form={submitButtonProps.form}
         disabled={submitButtonProps.disabled}
+        isLoading={submitButtonProps.isLoading}
         className={css({
           minW: '120px',
         })}

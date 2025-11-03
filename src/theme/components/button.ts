@@ -46,8 +46,8 @@ export const buttonRecipe = defineRecipe({
         '--hover-bg': 'token(colors.button-primary-hover)',
         color: 'neutral-50',
         _disabled: {
-          '--primary-bg': 'colors.button-primary-hover',
-          color: 'button-primary-hover',
+          '--primary-bg': '#eee',
+          color: '#ccc',
           cursor: 'not-allowed',
         },
         _focusVisible: {

@@ -159,7 +159,7 @@ export function NewTrip() {
           submitButtonProps={{
             label: 'Create',
             form: 'new-trip',
-            disabled: isSubmitting,
+            isLoading: isSubmitting,
           }}
         />
       </Dialog>

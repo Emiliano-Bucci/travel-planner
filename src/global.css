@@ -99,4 +99,10 @@
   html {
     font-size: 62.5%;
   }
+
+  @keyframes button_loader_spinner {
+    to {
+      transform: rotate(1turn);
+    }
+  }
 }
