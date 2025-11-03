@@ -9,6 +9,7 @@ type Props = {
   submitButtonProps: {
     label: string;
     form: string;
+    disabled?: boolean;
   };
 };
 
@@ -35,12 +36,13 @@ export function DialogFooter({
           minW: '120px',
         })}
       >
-        {backButtonProps?.label || 'Indietro'}
+        {backButtonProps?.label || 'Chiudi'}
       </Button>
       <Button
         onClick={onClose}
         type="submit"
         form={submitButtonProps.form}
+        disabled={submitButtonProps.disabled}
         className={css({
           minW: '120px',
         })}

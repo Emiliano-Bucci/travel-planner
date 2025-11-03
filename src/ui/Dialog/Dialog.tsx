@@ -50,7 +50,7 @@ const styles = {
       bg: '#fff',
       flexDir: 'column',
       overflowY: 'auto',
-      borderRadius: { md: '24px' },
+      borderRadius: '20px',
       maxH: { mdDown: '100%', md: '672px' },
       maxW: { md: '560px' },
       m: '0px',
