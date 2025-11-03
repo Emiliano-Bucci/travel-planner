@@ -5,20 +5,15 @@ import {
   button,
   text,
 } from '@/styled-system/recipes';
-import { Icon, type IconMapping } from '@/ui/Icon';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
-import { iconCVA, mobileCVA } from './common';
-
-function getIconSize(textVariant: 'button-l' | 'button-m' | 'none') {
-  return textVariant === 'button-l' ? 20 : 18;
-}
+import { iconCVA } from './common';
 
 type ButtonProps = ComponentProps<'button'> &
   ButtonVariantProps & {
     className?: string;
-    leftIcon?: IconMapping;
-    rightIcon?: IconMapping;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
     textSize?: TextVariantProps['textSize'];
     as?: 'button' | 'div';
   };
@@ -29,14 +24,13 @@ export function Button({
   leftIcon,
   rightIcon,
   children,
-  size = 'button-l',
+  size = 'button-m',
   btnType,
   rounded,
   textSize = 'button-m',
   as = 'button',
   ...props
 }: ButtonProps) {
-  const iconSize = getIconSize(size);
   const prevIconStyles = iconCVA({ position: 'prev', size });
   const nextIconStyles = iconCVA({ position: 'next', size });
 
@@ -55,18 +49,9 @@ export function Button({
 
   const contentFragment = (
     <>
-      <div className={mobileCVA({ size, btnType })} />
-      {leftIcon && (
-        <div className={prevIconStyles.root}>
-          <Icon type={leftIcon} width={iconSize} height={iconSize} />
-        </div>
-      )}
+      {leftIcon && <div className={prevIconStyles.root}>{leftIcon}</div>}
       {children}
-      {rightIcon && (
-        <div className={nextIconStyles.root}>
-          <Icon type={rightIcon} width={iconSize} height={iconSize} />
-        </div>
-      )}
+      {rightIcon && <div className={nextIconStyles.root}>{rightIcon}</div>}
     </>
   );
 

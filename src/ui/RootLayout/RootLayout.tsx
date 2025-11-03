@@ -8,7 +8,6 @@ import { Header } from './Header';
 export function RootLayout() {
   return (
     <div
-      data-color-mode="light"
       className={css({
         display: 'grid',
         w: '100%',

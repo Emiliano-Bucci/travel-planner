@@ -4,9 +4,10 @@ import { Text } from '@/ui/Text';
 type Props = {
   title: string;
   children: React.ReactNode;
+  actions?: React.ReactNode;
 };
 
-export function DashboardBox({ title, children }: Props) {
+export function DashboardBox({ title, children, actions }: Props) {
   return (
     <div
       className={css({
@@ -18,7 +19,17 @@ export function DashboardBox({ title, children }: Props) {
         p: '24px',
       })}
     >
-      <Text textSize="body-xl-700">{title}</Text>
+      <div
+        className={css({
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '8px',
+        })}
+      >
+        <Text textSize="body-xl-700">{title}</Text>
+        {actions}
+      </div>
       {children}
     </div>
   );

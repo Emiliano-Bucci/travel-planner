@@ -56,15 +56,26 @@ export const buttonRecipe = defineRecipe({
           outlineOffset: '2px',
         },
       },
+      outlined: {
+        '--primary-bg': 'transparent',
+        '--hover-bg': 'token(colors.neutral-200)',
+        color: 'button-primary',
+        border: '1px solid token(colors.button-primary)',
+        _disabled: {
+          color: 'button-primary-disabled',
+          cursor: 'not-allowed',
+        },
+        _focusVisible: {
+          outline: '2px solid',
+          outlineColor: 'primary',
+          outlineOffset: '2px',
+        },
+      },
     },
     size: {
       none: {},
-      'button-l': {
-        p: '10px 24px',
-        maxH: '44px',
-      },
       'button-m': {
-        p: '7px 16px',
+        p: '8px 16px',
         maxH: '32px',
       },
     },
@@ -78,19 +89,11 @@ export const buttonRecipe = defineRecipe({
     rounded: {
       none: { borderRadius: '0px' },
       default: {
-        borderRadius: '48px',
+        borderRadius: '10px',
       },
     },
   },
   compoundVariants: [
-    {
-      btnType: 'icon',
-      size: 'button-l',
-      css: {
-        w: '40px',
-        h: '40px',
-      },
-    },
     {
       btnType: 'icon',
       size: 'button-m',
