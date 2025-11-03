@@ -94,6 +94,14 @@ export const semanticTokens = {
       _dark: '{colors.button-primary-hover-dark}',
     },
   },
+
+  // Error colors
+  error: {
+    value: {
+      _light: '{colors.error-light}',
+      _dark: '{colors.error-dark}',
+    },
+  },
 } as const;
 
 /**

@@ -39,7 +39,6 @@ export function DialogFooter({
         {backButtonProps?.label || 'Chiudi'}
       </Button>
       <Button
-        onClick={onClose}
         type="submit"
         form={submitButtonProps.form}
         disabled={submitButtonProps.disabled}

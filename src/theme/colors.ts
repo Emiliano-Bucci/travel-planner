@@ -36,4 +36,8 @@ export const colors = {
   'button-primary-hover-light': { value: '#0F4E80' },
   'button-primary-dark': { value: '#0A355B' },
   'button-primary-hover-dark': { value: '#0F4E80' },
+
+  // Error Colors
+  'error-light': { value: '#D92D20' },
+  'error-dark': { value: '#F44336' },
 };

@@ -47,18 +47,11 @@ export function Button({
     ),
   };
 
-  const contentFragment = (
-    <>
+  return (
+    <button {...mergedProps}>
       {leftIcon && <div className={prevIconStyles.root}>{leftIcon}</div>}
       {children}
       {rightIcon && <div className={nextIconStyles.root}>{rightIcon}</div>}
-    </>
+    </button>
   );
-
-  if (as === 'div') {
-    // @ts-expect-error - mergedProps is valid for the div component
-    return <div {...mergedProps}>{contentFragment}</div>;
-  }
-
-  return <button {...mergedProps}>{contentFragment}</button>;
 }

@@ -11,7 +11,7 @@ const styles = {
     pt: '24px',
     pb: '8px',
     pl: '16px',
-    borderRadius: '14px',
+    borderRadius: '12px',
     border: '1px solid',
     borderColor: 'neutral-500',
     bg: '#fff',
@@ -124,7 +124,7 @@ export function Input({
           textSize="body-s-500"
           className={css({
             ml: '16px',
-            color: 'Error',
+            color: 'error',
           })}
         >
           {errorMessage}

@@ -9,7 +9,7 @@ import { RouterProvider } from 'react-router';
 import './global.css';
 import { router } from './routes';
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
